@@ -1,59 +1,58 @@
 package com.sipress.apiRest.controller;
-import com.sipress.apiRest.models.Frais;
+
 import com.sipress.apiRest.models.Project;
-import com.sipress.apiRest.repository.FoncierRepository;
-import com.sipress.apiRest.repository.ProjectRepository;
-import com.sipress.apiRest.service.ProjectService;
+import com.sipress.apiRest.models.Viabilisation;
+import com.sipress.apiRest.service.ViabilisationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/")
-public class ProjectController {
-    private ProjectService projectService;
+public class ViabilisationController {
+    private ViabilisationService viabilisationService;
 
-
-     public ProjectController(ProjectService projectService) {
-        this.projectService = projectService;
-
-     }
-
-    @PostMapping("/addProject")
-    public Project saveProject(@RequestBody Project project)
-    {
-        return projectService.saveProject(project);
+    public ViabilisationController(ViabilisationService viabilisationService) {
+        this.viabilisationService = viabilisationService;
     }
 
-    @GetMapping("/projects")
-    public List<Project> fetchProjectList()
+
+    @PostMapping("/addViabilisation")
+    public Viabilisation saveViabilisation(@RequestBody Viabilisation viabilisation)
     {
-        return projectService.fetchProjectList();
+        return viabilisationService.saveViabilisation(viabilisation);
     }
 
-    @PutMapping("/projects/{id}")
-    public Project updateProject(@RequestBody Project project, @PathVariable("id") Long id)
+    @GetMapping("/viabilisations")
+    public List<Viabilisation> fetchViabilisationList()
     {
-        return projectService.updateProject(project, id);
+        return viabilisationService.fetchViabilisationList();
     }
 
-    @GetMapping("/project/{id}")
-    public Optional<Project> findProjectById(@PathVariable("id") Long id)
+    @PutMapping("/viabilisations/{id}")
+    public Viabilisation updateViabilisation(@RequestBody Viabilisation viabilisation, @PathVariable("id") Long id)
     {
-        return projectService.findProjectById(id);
+        return viabilisationService.updateViabilisation(viabilisation, id);
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<Project>> searchProjects(@RequestParam("query") String query){
-        return ResponseEntity.ok(projectService.searchProjects(query));
+    @GetMapping("/viable/{id}")
+    public Optional<Viabilisation> findProjectById(@PathVariable("id") Long id)
+    {
+        return viabilisationService.findViabilisationById(id);
     }
 
-    @DeleteMapping("/projects/{id}")
-    public String deleteProjectById(@PathVariable("id") Long id)
+//    @GetMapping("/search")
+//    public ResponseEntity<List<Project>> searchProjects(@RequestParam("query") String query){
+//        return ResponseEntity.ok(viabilisationService.searchProjects(query));
+//    }
+
+    @DeleteMapping("/viabilisations/{id}")
+    public String deleteViabilisationById(@PathVariable("id") Long id)
     {
-        projectService.deleteProjecttById(id);
+       viabilisationService.deleteViabilisationById(id);
         return "Deleted Successfully";
     }
 }

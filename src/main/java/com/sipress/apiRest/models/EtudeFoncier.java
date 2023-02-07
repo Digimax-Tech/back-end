@@ -17,5 +17,6 @@ public class EtudeFoncier {
     private String designation;
     private String surface;
     private String nombrePieges;
+    private String nombreVilla;
 
 }

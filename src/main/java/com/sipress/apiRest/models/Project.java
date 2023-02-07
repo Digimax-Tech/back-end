@@ -21,8 +21,8 @@ public  class Project {
     private String site;
     private String ville;
     private  String description;
-    private String nomPropriete;
-    private double surfaceTerrain;
+    private String titrePropriete;
+    private double surface;
     private double prixMaitreCarre;
     private double prixTerrain;
   //  private  double total;

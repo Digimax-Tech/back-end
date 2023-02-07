@@ -14,12 +14,11 @@ import java.util.Optional;
 @RequestMapping("/api/v1/")
 public class ProjectController {
     private ProjectService projectService;
-    private ProjectRepository projectRepository;
-    private FoncierRepository foncierRepository;
 
-     public ProjectController(ProjectService projectService, ProjectRepository projectRepository) {
+
+     public ProjectController(ProjectService projectService) {
         this.projectService = projectService;
-        this.projectRepository = projectRepository;
+
      }
 
     @PostMapping("/addProject")

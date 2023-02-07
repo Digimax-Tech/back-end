@@ -58,14 +58,5 @@ public class EtudeFoncierController {
         return "Deleted Successfully";
     }
 
-
-//    @GetMapping("/projects")
-//    public List<Project> getAll (@RequestParam String field, @RequestParam int page, @RequestParam int size) {
-//        Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, field);
-//        return projectRepository.findAll(pageable).toList();
-//    }
-
-
-
 }
 
