@@ -44,7 +44,7 @@ public class ProjectServiceImpl implements ProjectService {
         project.setTitrePropriete(project1.getTitrePropriete());
         project.setPrixMaitreCarre(project1.getPrixMaitreCarre());
         project.setPrixTerrain(project1.getPrixTerrain());
-        project.setSurface(project1.getSurface());
+        project.setSurfaceTerrain(project1.getSurfaceTerrain());
         project.setDescription(project1.getDescription());
         return projectRepository.save(project1);
     }

@@ -22,7 +22,7 @@ public  class Project {
     private String ville;
     private  String description;
     private String titrePropriete;
-    private double surface;
+    private double surfaceTerrain;
     private double prixMaitreCarre;
     private double prixTerrain;
   //  private  double total;
