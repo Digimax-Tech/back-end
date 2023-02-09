@@ -18,10 +18,5 @@ public interface FraisService {
 
      void deleteFraisById(Long id);
 
-
-
-
-
-
 }
 

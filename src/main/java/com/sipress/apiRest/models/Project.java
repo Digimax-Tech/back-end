@@ -5,14 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public  class Project {
     @Id @GeneratedValue(strategy = GenerationType.TABLE)
     private  Long id;

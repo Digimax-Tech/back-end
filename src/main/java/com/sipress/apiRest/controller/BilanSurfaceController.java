@@ -19,11 +19,11 @@ public class BilanSurfaceController {
 
 
   private BilanSurfaceService bilanSurfaceService;
-  private BilanSurfaceRepository bilanSurfaceRepository;
 
-    public BilanSurfaceController(BilanSurfaceService bilanSurfaceService, BilanSurfaceRepository bilanSurfaceRepository) {
+
+    public BilanSurfaceController(BilanSurfaceService bilanSurfaceService) {
         this.bilanSurfaceService = bilanSurfaceService;
-        this.bilanSurfaceRepository = bilanSurfaceRepository;
+
     }
 
 

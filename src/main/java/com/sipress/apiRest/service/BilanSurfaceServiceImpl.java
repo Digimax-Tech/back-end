@@ -34,18 +34,16 @@ public class BilanSurfaceServiceImpl implements BilanSurfaceService {
     public BilanSurface updateBilanSurfacer(BilanSurface bilanSurface, Long id) {
         BilanSurface bilanSurface1 = bilanSurfaceRepository.findById(id).get();
         bilanSurface.setId(bilanSurface1.getId());
-        bilanSurface.setBet(bilanSurface1.getBet());
-        bilanSurface.setAdductionDeeau(bilanSurface1.getAdductionDeeau());
-        bilanSurface.setAssainissement(bilanSurface1.getAssainissement());
-        bilanSurface.setDiversImprevus(bilanSurface1.getDiversImprevus());
-        bilanSurface.setEletrification(bilanSurface1.getEletrification());
-        bilanSurface.setFraisDeGestion(bilanSurface1.getFraisDeGestion());
-        bilanSurface.setFraisFinancier(bilanSurface1.getFraisFinancier());
-        bilanSurface.setGeometrie(bilanSurface1.getGeometrie());
-        bilanSurface.setMarge(bilanSurface1.getMarge());
-        bilanSurface.setTelephone(bilanSurface1.getTelephone());
-        bilanSurface.setTerrassement(bilanSurface1.getTerrassement());
-        bilanSurface.setVoirie(bilanSurface1.getVoirie());
+        bilanSurface.setCuisine(bilanSurface1.getCuisine());
+        bilanSurface.setChambre(bilanSurface1.getChambre());
+        bilanSurface.setDemenagement(bilanSurface1.getDemenagement());
+        bilanSurface.setEspaceFamiliale(bilanSurface1.getEspaceFamiliale());
+        bilanSurface.setPocheDentre(bilanSurface1.getPocheDentre());
+        bilanSurface.setSalon(bilanSurface1.getSalon());
+        bilanSurface.setSejour(bilanSurface1.getSejour());
+        bilanSurface.setHallDentre(bilanSurface1.getHallDentre());
+        bilanSurface.setTerrasse(bilanSurface1.getTerrasse());
+        bilanSurface.setToilette(bilanSurface1.getToilette());
 
         return bilanSurfaceRepository.save(bilanSurface1);
     }

@@ -18,9 +18,4 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
             "Or p.promoteur LIKE CONCAT('%', :query, '%')")
     List<Project> searchProjects(String query);
 
-
-
-
-
-
 }
