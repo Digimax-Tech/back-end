@@ -19,7 +19,9 @@ public class Foncier{
     private double prix;
     private double prixTerrain;
     private  double total;
-//    @ManyToOne
-//    private  Project project;
+
+
+    @OneToOne(mappedBy = "foncier")
+    private  Foncier foncier;
 
 }

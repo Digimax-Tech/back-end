@@ -1,5 +1,5 @@
-
 package com.sipress.apiRest.models;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,16 +11,20 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EtudeFoncier {
+public class Simulation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
-    private String designation;
-    private double surface;
-    private double nombrePieges;
-    private double nombreVilla;
+   private  String nom;
 
+    @OneToOne
+   private  EtudeFoncier etudeFoncier;
+    @OneToOne
+    private  Foncier foncier;
 
-    @OneToOne(mappedBy = "etudeFoncier")
-    private  Simulation simulation;
+  @OneToOne
+    private Viabilisation viabilisation;
+
+   @ManyToOne
+   private  Project project;
 
 }

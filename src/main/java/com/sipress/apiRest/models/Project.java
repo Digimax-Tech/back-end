@@ -3,8 +3,10 @@ package com.sipress.apiRest.models;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.catalina.LifecycleState;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,9 +24,10 @@ public  class Project {
     private double surfaceTerrain;
     private double prixMaitreCarre;
     private double prixTerrain;
-  //  private  double total;
-//    @OneToMany(mappedBy = "project")
-//    private List<Foncier> fonciers =new ArrayList<>();
+    private  double total;
 
+
+    @OneToMany(mappedBy = "project")
+    private List<Simulation> simulations;
 
 }
