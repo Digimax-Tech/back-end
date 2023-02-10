@@ -15,8 +15,8 @@ public class EtudeFoncier {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private String designation;
-    private String surface;
-    private String nombrePieges;
-    private String nombreVilla;
+    private double surface;
+    private double nombrePieges;
+    private double nombreVilla;
 
 }
