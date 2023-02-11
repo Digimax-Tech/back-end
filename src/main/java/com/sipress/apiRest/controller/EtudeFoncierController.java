@@ -2,7 +2,6 @@ package com.sipress.apiRest.controller;
 
 
 import com.sipress.apiRest.models.EtudeFoncier;
-import com.sipress.apiRest.models.Foncier;
 import com.sipress.apiRest.repository.EtudeFoncierRepository;
 import com.sipress.apiRest.service.EtudeFoncierService;
 import org.springframework.web.bind.annotation.*;

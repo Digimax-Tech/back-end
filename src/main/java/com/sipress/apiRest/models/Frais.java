@@ -38,6 +38,10 @@ public class Frais{
     private  double fraisEnregistrement;
     private  double fraisGeneraux;
 
+
+    @OneToOne
+    protected  Simulation simulation;
+
 }
 
 

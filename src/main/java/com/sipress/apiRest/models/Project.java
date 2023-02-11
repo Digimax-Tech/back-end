@@ -30,4 +30,7 @@ public  class Project {
     @OneToMany(mappedBy = "project")
     private List<Simulation> simulations;
 
+    @OneToOne
+    private  EtudeFoncier etudeFoncier;
+
 }

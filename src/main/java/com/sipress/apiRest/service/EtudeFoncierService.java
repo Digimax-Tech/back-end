@@ -1,7 +1,6 @@
 package com.sipress.apiRest.service;
 
 import com.sipress.apiRest.models.EtudeFoncier;
-import com.sipress.apiRest.models.Foncier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

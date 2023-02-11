@@ -23,4 +23,7 @@ public class EtudeFoncier {
     @OneToOne(mappedBy = "etudeFoncier")
     private  Simulation simulation;
 
+     @OneToOne(mappedBy = "etudeFoncier")
+    private Project project;
+
 }

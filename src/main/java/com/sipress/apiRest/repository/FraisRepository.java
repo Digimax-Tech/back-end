@@ -1,12 +1,8 @@
 package com.sipress.apiRest.repository;
 
-import com.sipress.apiRest.models.Foncier;
 import com.sipress.apiRest.models.Frais;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 
 @Repository

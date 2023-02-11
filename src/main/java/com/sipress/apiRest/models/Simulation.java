@@ -14,17 +14,18 @@ import javax.persistence.*;
 public class Simulation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
-   private  String nom;
+   private  String type;
 
     @OneToOne
    private  EtudeFoncier etudeFoncier;
-    @OneToOne
-    private  Foncier foncier;
 
-  @OneToOne
+   @OneToOne
     private Viabilisation viabilisation;
 
    @ManyToOne
    private  Project project;
+
+    @ManyToOne
+    private  BilanSurface bilanSurface;
 
 }

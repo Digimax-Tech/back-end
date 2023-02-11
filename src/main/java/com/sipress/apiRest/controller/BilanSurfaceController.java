@@ -2,13 +2,9 @@ package com.sipress.apiRest.controller;
 
 
 import com.sipress.apiRest.models.BilanSurface;
-import com.sipress.apiRest.models.Foncier;
-import com.sipress.apiRest.models.SaveData;
-import com.sipress.apiRest.repository.BilanSurfaceRepository;
 import com.sipress.apiRest.service.BilanSurfaceService;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Transient;
 import java.util.List;
 import java.util.Optional;
 

@@ -28,7 +28,6 @@ public class Viabilisation {
     private  double fraisFinancier;
 
 
-
     @OneToOne(mappedBy = "viabilisation")
     private  Simulation simulation;
 
