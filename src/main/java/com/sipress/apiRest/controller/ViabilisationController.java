@@ -1,5 +1,6 @@
 package com.sipress.apiRest.controller;
 
+import com.sipress.apiRest.models.EtudeFoncier;
 import com.sipress.apiRest.models.Project;
 import com.sipress.apiRest.models.Viabilisation;
 import com.sipress.apiRest.service.ViabilisationService;
@@ -19,12 +20,12 @@ public class ViabilisationController {
         this.viabilisationService = viabilisationService;
     }
 
-
     @PostMapping("/addViabilisation")
     public Viabilisation saveViabilisation(@RequestBody Viabilisation viabilisation)
     {
         return viabilisationService.saveViabilisation(viabilisation);
     }
+
 
     @GetMapping("/viabilisations")
     public List<Viabilisation> fetchViabilisationList()

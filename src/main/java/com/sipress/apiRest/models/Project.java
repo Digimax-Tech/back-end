@@ -1,5 +1,7 @@
 package com.sipress.apiRest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,13 +26,15 @@ public  class Project {
     private double surfaceTerrain;
     private double prixMaitreCarre;
     private double prixTerrain;
+
     private  double total;
 
-
-    @OneToMany(mappedBy = "project")
-    private List<Simulation> simulations;
-
-    @OneToOne
+    @OneToOne(mappedBy = "project")
+    @JsonIgnore
     private  EtudeFoncier etudeFoncier;
+
+
+//    @OneToMany(mappedBy = "project")
+//    private List<Simulation> simulations;
 
 }

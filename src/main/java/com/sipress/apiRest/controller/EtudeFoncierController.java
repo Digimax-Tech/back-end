@@ -43,6 +43,11 @@ public class EtudeFoncierController {
     }
 
 
+    @GetMapping("/etudeFonciers/project/{id}")
+    public EtudeFoncier  findEtudeFoncierByProjectId(@PathVariable("id") Long id)
+    {
+        return etudeFoncierRepository.findEtudeFoncierByProjectId(id);
+    }
 
     @GetMapping("/etudeFonciers/{id}")
     public Optional<EtudeFoncier> findEtudeFoncierById(@PathVariable("id") Long id)
@@ -56,6 +61,8 @@ public class EtudeFoncierController {
         etudeFoncierService.deleteEtudeFoncierById(id);
         return "Deleted Successfully";
     }
+
+
 
 }
 

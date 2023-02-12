@@ -15,4 +15,5 @@ public interface EtudeFoncierRepository extends JpaRepository<EtudeFoncier, Long
 //            "Or f.surface LIKE CONCAT('%', :query, '%')")
 //    List<Foncier> searchFonciers(String query);
 
+    EtudeFoncier findEtudeFoncierByProjectId(Long id);
 }

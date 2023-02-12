@@ -1,6 +1,8 @@
 
 package com.sipress.apiRest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,8 +21,8 @@ public class EtudeFoncier {
     private double nombrePieges;
     private double nombreVilla;
 
-
-     @OneToOne(mappedBy = "etudeFoncier")
-    private Project project;
+    @OneToOne
+    @JsonIgnore
+    private  Project project;
 
 }

@@ -1,6 +1,5 @@
 package com.sipress.apiRest.service;
 
-import com.sipress.apiRest.models.Frais;
 import com.sipress.apiRest.models.Viabilisation;
 import org.springframework.stereotype.Service;
 

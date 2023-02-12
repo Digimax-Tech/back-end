@@ -46,6 +46,8 @@ public class EtudeFoncierServiceImpl implements EtudeFoncierService {
         return etudeFoncierRepository.findById(id);
     }
 
+
+
     @Override
     public void deleteEtudeFoncierById(Long id) {
        etudeFoncierRepository.deleteById(id);
