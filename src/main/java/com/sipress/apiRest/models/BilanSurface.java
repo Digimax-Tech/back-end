@@ -26,7 +26,4 @@ public class BilanSurface {
     private int terrasse;
 
 
-    @OneToOne
-    private  Simulation simulation;
-
 }

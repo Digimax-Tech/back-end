@@ -16,16 +16,5 @@ public class Simulation {
     private  Long id;
    private  String type;
 
-    @OneToOne
-   private  EtudeFoncier etudeFoncier;
-
-   @OneToOne
-    private Viabilisation viabilisation;
-
-   @ManyToOne
-   private  Project project;
-
-    @ManyToOne
-    private  BilanSurface bilanSurface;
 
 }
