@@ -19,7 +19,7 @@ public class Viabilisation {
     private  double totalUrbanisation;
     private double  geometrie;
     @Transient
-    private  double totalGeometir;
+    private  double totalGeometrie;
 
     private double adductionDeeau;
     @Transient

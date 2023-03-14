@@ -1,7 +1,8 @@
-package com.sipress.apiRest.models;
+package com.sipress.apiRest.message;
+
+
 
 public class ResponseMessage {
-
     private String message;
 
     public ResponseMessage(String message) {
@@ -15,4 +16,5 @@ public class ResponseMessage {
     public void setMessage(String message) {
         this.message = message;
     }
+
 }

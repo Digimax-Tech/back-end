@@ -1,6 +1,6 @@
 package com.sipress.apiRest.exception;
 
-import com.sipress.apiRest.models.ResponseMessage;
+import com.sipress.apiRest.message.ResponseMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

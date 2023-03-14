@@ -2,7 +2,10 @@ package com.sipress.apiRest.service;
 
 import com.sipress.apiRest.models.Project;
 import com.sipress.apiRest.repository.ProjectRepository;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,20 +37,24 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public Project updateProject(Project project, Long id) {
-        Project project1 = projectRepository.findById(id).get();
-        project.setId(project1.getId());
-        project.setNom(project1.getNom());
-        project.setPromoteur(project1.getPromoteur());
-        project.setSite(project1.getSite());
-        project.setVille(project1.getVille());
-        project.setTitrePropriete(project1.getTitrePropriete());
-        project.setPrixMaitreCarre(project1.getPrixMaitreCarre());
-        project.setPrixTerrain(project1.getPrixTerrain());
-        project.setSurfaceTerrain(project1.getSurfaceTerrain());
-        project.setDescription(project1.getDescription());
-        return projectRepository.save(project1);
-    }
+        public Project updateProject(@PathVariable Long id, @RequestBody Project project) {
+            return projectRepository.findById(id).map(projectUpdate -> {
+                projectUpdate.setId(project.getId());
+                projectUpdate.setNom(project.getNom());
+                projectUpdate.setPromoteur(project.getPromoteur());
+                projectUpdate.setSite(project.getSite());
+                projectUpdate.setVille(project.getVille());
+                projectUpdate.setTitrePropriete(project.getTitrePropriete());
+                projectUpdate.setPrixMaitreCarre(project.getPrixMaitreCarre());
+                projectUpdate.setPrixTerrain(project.getPrixTerrain());
+                projectUpdate.setSurfaceTerrain(project.getSurfaceTerrain());
+                projectUpdate.setDescription(project.getDescription());
+                return projectRepository.save(projectUpdate);
+
+            }).orElseThrow(() -> new ResourceNotFoundException("PostId " + id + " not found"));
+        }
+
+
 
 
 

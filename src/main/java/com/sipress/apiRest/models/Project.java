@@ -1,13 +1,16 @@
 package com.sipress.apiRest.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.catalina.LifecycleState;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -15,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public  class Project {
-    @Id @GeneratedValue(strategy = GenerationType.TABLE)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private String nom;
     private String promoteur;
@@ -27,14 +30,26 @@ public  class Project {
     private double prixMaitreCarre;
     private double prixTerrain;
 
-    private  double total;
 
-    @OneToOne(mappedBy = "project")
+    @CreationTimestamp
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date createdAt;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
     @JsonIgnore
-    private  EtudeFoncier etudeFoncier;
+    private List<EtudeFoncier> etudeFonciers;
+
+    @OneToMany(mappedBy = "project")
+    @JsonIgnore
+    private  List<Foncier> fonciers;
+
+    @Enumerated(EnumType.STRING)
+    private ProjectStatus status;
+
+//    @ManyToOne
+//    private  Simulation simulation;
 
 
-//    @OneToMany(mappedBy = "project")
-//    private List<Simulation> simulations;
+
 
 }

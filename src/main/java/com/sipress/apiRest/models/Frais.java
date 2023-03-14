@@ -38,6 +38,8 @@ public class Frais{
     private  double fraisEnregistrement;
     private  double fraisGeneraux;
 
+//    @OneToOne(mappedBy = "frais")
+//    private Simulation simulation;
 }
 
 
