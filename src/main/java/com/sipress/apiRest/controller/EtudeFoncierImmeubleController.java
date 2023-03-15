@@ -35,7 +35,7 @@ public class EtudeFoncierImmeubleController {
     }
 
 
-    @PostMapping("/projects/{id}/addEtudeFonciersImmeuble")
+    @PostMapping("/projects/{id}/fonciers")
     public EtudeFoncierImmeuble createEtudeFoncier(@PathVariable (value = "id") Long id, @Valid
     @RequestBody EtudeFoncierImmeuble etudeFoncierImmeuble)
     {
